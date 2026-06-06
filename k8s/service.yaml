@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ai-inference-service
+  namespace: ai-platform
+spec:
+  selector:
+    app: ai-inference-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+  type: ClusterIP
